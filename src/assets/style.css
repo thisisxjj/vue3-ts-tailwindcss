@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --header-height: 72px;
+  --color-primary-label: #333;
+  --color-active-background: rgba(0,0,0,0.03);
+  --color-secondary-label: rgba(51,51,51,0.8);
+}
+
+.icon {
+  @apply w-10 h-full flex items-center justify-center cursor-pointer text-[var(--color-secondary-label)] hover:text-[var(--color-primary-label)];
+}
+
+.common-button {
+  @apply h-10 px-4 
+  text-base
+  text-[var(--color-secondary-label)]
+  bg-transparent
+  outline-none
+  inline-block
+  select-none
+  whitespace-nowrap
+  align-middle
+  text-center
+  rounded-[100px]
+  hover:bg-[var(--color-active-background)]
+  hover:rounded-full
+  hover:text-[var(--color-primary-label)];
+}
+
+.icon-button {
+  @apply 
+  h-10 p-[10px] rounded-full 
+  text-base bg-transparent
+  text-[var(--color-secondary-label)]
+  outline-none
+  inline-block
+  select-none
+  whitespace-nowrap
+  align-middle
+  text-center
+  hover:bg-[var(--color-active-background)]
+  hover:rounded-full
+  hover:text-[var(--color-primary-label)];
+}
