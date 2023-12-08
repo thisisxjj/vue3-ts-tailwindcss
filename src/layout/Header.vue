@@ -1,5 +1,16 @@
 <template>
-  <header class="px-8 flex items-center justify-between h-[var(--header-height)] w-full max-w-[1728px]">
+  <header
+    class="
+      fixed z-10
+      px-8
+      flex
+      items-center
+      justify-between
+      h-[var(--header-height)]
+      w-full
+      max-w-[1728px]
+    "
+  >
     <Logo />
     <Search v-model="search" @clear="handleClearSearch" @search="handleSearch" />
     <Menu />

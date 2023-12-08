@@ -4,9 +4,18 @@
 
 :root {
   --header-height: 72px;
+  --color-background: #fff;
   --color-primary-label: #333;
   --color-active-background: rgba(0,0,0,0.03);
   --color-secondary-label: rgba(51,51,51,0.8);
+  --color-tertiary-label: rgba(51,51,51,0.6);
+  --color-quaternary-label: rgba(51,51,51,0.3);
+}
+
+::-webkit-scrollbar {
+  background-color: var(--color-background);
+  width: 0;
+  height: 0;
 }
 
 .icon {
