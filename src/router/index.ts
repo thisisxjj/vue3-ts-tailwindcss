@@ -1,19 +1,21 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/pages/Home.vue'
+import { createRouter, createWebHistory } from "vue-router"
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    redirect: '/explore',
-    children: [],
+    path: "/",
+    name: "Home",
+    redirect: "/explore",
   },
   {
-    path: '/explore',
-    name: 'Explore',
-    component: Home,
-    children: [],
-  }
+    path: "/explore",
+    name: "Explore",
+    component: () => import("@/pages/Home.vue"),
+  },
+  {
+    path: "/notification",
+    name: "Notification",
+    component: () => import("@/pages/Notification.vue"),
+  },
 ]
 
 const router = createRouter({

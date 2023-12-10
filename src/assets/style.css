@@ -4,12 +4,27 @@
 
 :root {
   --header-height: 72px;
+  --color-blue: #3d8af5;
+  --color-border: rgba(0, 0, 0, 0.08);
   --color-background: #fff;
   --color-primary-label: #333;
-  --color-active-background: rgba(0,0,0,0.03);
-  --color-secondary-label: rgba(51,51,51,0.8);
-  --color-tertiary-label: rgba(51,51,51,0.6);
-  --color-quaternary-label: rgba(51,51,51,0.3);
+  --color-active-background: rgba(0, 0, 0, 0.03);
+  --color-secondary-label: rgba(51, 51, 51, 0.8);
+  --color-tertiary-label: rgba(51, 51, 51, 0.6);
+  --color-quaternary-label: rgba(51, 51, 51, 0.3);
+  --mask-paper: hsla(0, 0%, 100%, 0.98);
+
+  /* dark */
+  --dark-color-background: #0a0a0a;
+  --dark-elevation-high-background: #181818;
+  --dark-elevation-low-background: #121212;
+  --dark-color-active-background: hsla(0, 0%, 100%, 0.04);
+  --dark-mask-paper: rgba(10, 10, 10, 0.98);
+  --dark-color-primary-label: #fff;
+  --dark-color-secondary-label: hsla(0, 0%, 100%, 0.8);
+  --dark-color-tertiary-label: hsla(0, 0%, 100%, 0.6);
+  --dark-color-quaternary-label: hsla(0, 0%, 100%, 0.3);
+  --dark-color-border: hsla(0, 0%, 100%, 0.08);
 }
 
 ::-webkit-scrollbar {
@@ -18,14 +33,33 @@
   height: 0;
 }
 
+body,
+html {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC,
+    PingFang TC, PingFang HK, Microsoft Yahei, Microsoft JhengHei;
+  @apply bg-white text-[var(--color-primary-label)] dark:text-[var(--dark-color-primary-label)] dark:bg-[var(--dark-color-background)];
+}
+
 .icon {
-  @apply w-10 h-full flex items-center justify-center cursor-pointer text-[var(--color-secondary-label)] hover:text-[var(--color-primary-label)];
+  @apply w-10
+    h-full
+    flex
+    items-center
+    justify-center
+    cursor-pointer
+    text-[var(--color-secondary-label)]
+    hover:text-[var(--color-primary-label)]
+    dark:text-[var(--dark-color-secondary-label)]
+    dark:hover:text-[var(--dark-color-primary-label)];
 }
 
 .common-button {
   @apply h-10 px-4 
   text-base
   text-[var(--color-secondary-label)]
+  dark:text-[var(--dark-color-secondary-label)]
   bg-transparent
   outline-none
   inline-block
@@ -35,15 +69,17 @@
   text-center
   rounded-[100px]
   hover:bg-[var(--color-active-background)]
+  dark:hover:bg-[var(--dark-color-active-background)]
   hover:rounded-full
-  hover:text-[var(--color-primary-label)];
+  hover:text-[var(--color-primary-label)]
+  dark:hover:text-white;
 }
 
 .icon-button {
-  @apply 
-  h-10 p-[10px] rounded-full 
+  @apply h-10 p-[10px] rounded-full 
   text-base bg-transparent
   text-[var(--color-secondary-label)]
+  dark:text-[var(--dark-color-secondary-label)]
   outline-none
   inline-block
   select-none
@@ -51,6 +87,8 @@
   align-middle
   text-center
   hover:bg-[var(--color-active-background)]
+  dark:hover:bg-[var(--dark-color-active-background)]
   hover:rounded-full
-  hover:text-[var(--color-primary-label)];
+  hover:text-[var(--color-primary-label)]
+  dark:hover:text-white;
 }
