@@ -1,8 +1,15 @@
-import { createApp } from 'vue'
-import router from './router'
-import App from './App.vue'
-import './assets/style.css'
+import { createApp } from "vue"
+
+import router from "./router"
+import pinia from "./stores"
+import { useTheme } from "./utils/theme"
+
+import App from "./App.vue"
+
+import "./assets/style.css"
 
 const app = createApp(App)
 
-app.use(router).mount('#app')
+app.use(pinia).use(router).mount("#app")
+
+useTheme()

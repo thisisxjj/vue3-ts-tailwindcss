@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     screens: {
       sm: "696px",
@@ -30,6 +31,10 @@ export default {
           "0 4px 32px 0 rgba(0, 0, 0, 0.08), 0 1px 4px 0 rgba(0, 0, 0, 0.04)",
         "dark-menu-list":
           "0 4px 32px 0 rgba(0, 0, 0, 0.08), 0 1px 4px 0 rgba(0, 0, 0, 0.04),0 0 0 1px hsla(0, 0%, 100%, 0.06) inset",
+        "theme-button":
+          "0 2px 8px 0 rgba(0, 0, 0, 0.04), 0 1px 2px 0 rgba(0, 0, 0, 0.02)",
+        "dark-theme-button":
+          "0 2px 8px 0 rgba(0,0,0,0.04),0 1px 2px 0 rgba(0,0,0,0.02),0 0 0 1px hsla(0,0%,100%,0.04) inset",
       },
     },
   },

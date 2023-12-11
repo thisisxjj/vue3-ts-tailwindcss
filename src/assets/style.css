@@ -39,7 +39,7 @@ html {
     Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
     Noto Color Emoji, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC,
     PingFang TC, PingFang HK, Microsoft Yahei, Microsoft JhengHei;
-  @apply bg-white text-[var(--color-primary-label)] dark:text-[var(--dark-color-primary-label)] dark:bg-[var(--dark-color-background)];
+  @apply h-screen bg-white text-[var(--color-primary-label)] dark:text-[var(--dark-color-primary-label)] dark:bg-[var(--dark-color-background)];
 }
 
 .icon {
