@@ -8,6 +8,7 @@
             'cursor-pointer hover:bg-[var(--color-active-background)] dark:hover:bg-[var(--dark-color-active-background)] hover:text-[var(--color-primary-label)] dark:hover:text-[var(--dark-color-primary-label)]'
         )
       "
+      @click="$emit('click', type)"
     >
       <span>{{ name }}</span>
       <div
@@ -35,10 +36,15 @@ import { cx } from "class-variance-authority"
 import Tag from "../common/Tag.vue"
 import ToggleThemeButton from "./ToggleThemeButton.vue"
 import { GroupItem } from "../common/types"
+import { SidebarMenuItemType } from "@/types"
 
 defineOptions({
   name: "MoreInfoMenuButton",
 })
 
 defineProps<GroupItem>()
+
+defineEmits<{
+  click: [type: SidebarMenuItemType | undefined]
+}>()
 </script>
