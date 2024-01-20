@@ -9,17 +9,34 @@ const routes = [
   {
     path: "/explore",
     name: "Explore",
-    component: () => import("@/pages/Home.vue"),
+    component: () => import("@/pages/home/index.vue"),
+  },
+  // TODO 通过id路由搜索到具体的note信息
+  {
+    path: "/explore/:id",
+    name: "ExploreDetail",
+    component: () => import("@/pages/home/index.vue"),
   },
   {
     path: "/notification",
     name: "Notification",
     component: () => import("@/pages/Notification.vue"),
   },
+  {
+    path: "/user",
+    name: "User",
+    layout: () => import("@/pages/user/index.vue"),
+    children: [
+      {
+        path: "profile/:id",
+        name: "UserProfile",
+        component: () => import("@/pages/user/profile/index.vue"),
+      },
+    ],
+  },
 ]
 
 const router = createRouter({
-  // 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。
   history: createWebHistory(),
   routes, // `routes: routes` 的缩写
 })

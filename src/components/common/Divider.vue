@@ -1,11 +1,16 @@
 <template>
-  <div class="divider"></div>
+  <div class="divider" :style="style"></div>
 </template>
 
 <script setup lang="ts">
+import { StyleValue } from "vue"
 defineOptions({
   name: "Divider",
 })
+
+defineProps<{
+  style?: StyleValue
+}>()
 </script>
 
 <style>

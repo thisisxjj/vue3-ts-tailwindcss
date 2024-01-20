@@ -11,17 +11,14 @@
         className
       )
     "
+    @click="$emit('click', $event)"
   >
     <slot />
   </button>
 </template>
 
 <script setup lang="ts">
-import {
-  cva,
-  cx,
-  type VariantProps,
-} from "class-variance-authority"
+import { cva, cx, type VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
 
 const button = cva(
@@ -43,18 +40,13 @@ const button = cva(
   {
     variants: {
       variant: {
-        primary:
-          "bg-[#ff2e4d] text-white",
-        secondary:
-          "bg-white text-[var(--color-primary-label)]",
+        primary: "bg-[#ff2e4d] text-white",
+        secondary: "bg-white text-[var(--color-primary-label)]",
       },
       size: {
-        small:
-          "text-[14px] leading-[18px] px-4 h-6",
-        medium:
-          "text-[14px] leading-[18px] px-5 h-9",
-        large:
-          "text-[16px] leading-4 px-6 font-semibold h-10",
+        small: "text-[14px] leading-[18px] px-4 h-6",
+        medium: "text-[14px] leading-[18px] px-5 h-9",
+        large: "text-[16px] leading-4 px-6 font-semibold h-10",
       },
     },
     compoundVariants: [
@@ -66,18 +58,21 @@ const button = cva(
   }
 )
 
-type ButtonProps =
-  VariantProps<typeof button>
+type ButtonProps = VariantProps<typeof button>
 
 withDefaults(
   defineProps<{
-    variant: ButtonProps["variant"]
-    size: ButtonProps["size"]
-    className: string
+    variant?: ButtonProps["variant"]
+    size?: ButtonProps["size"]
+    className?: string
   }>(),
   {
     variant: "primary",
     size: "medium",
   }
 )
+
+defineEmits<{
+  click: [e: Event]
+}>()
 </script>

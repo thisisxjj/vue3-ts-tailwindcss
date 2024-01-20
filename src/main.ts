@@ -7,6 +7,7 @@ import { useTheme } from "./utils/theme"
 import App from "./App.vue"
 
 import "./assets/style.css"
+import "./assets/modal.css"
 
 const app = createApp(App)
 

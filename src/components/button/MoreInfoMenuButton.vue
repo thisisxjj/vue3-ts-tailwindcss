@@ -8,7 +8,7 @@
             'cursor-pointer hover:bg-[var(--color-active-background)] dark:hover:bg-[var(--dark-color-active-background)] hover:text-[var(--color-primary-label)] dark:hover:text-[var(--dark-color-primary-label)]'
         )
       "
-      @click="$emit('click', type)"
+      @click="$emit('customeClick', type)"
     >
       <span>{{ name }}</span>
       <div
@@ -45,6 +45,6 @@ defineOptions({
 defineProps<GroupItem>()
 
 defineEmits<{
-  click: [type: SidebarMenuItemType | undefined]
+  customeClick: [type: SidebarMenuItemType | undefined]
 }>()
 </script>

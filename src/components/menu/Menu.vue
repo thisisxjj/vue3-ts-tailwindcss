@@ -4,57 +4,33 @@
       <MenuButton :list="cCList">创作中心</MenuButton>
       <MenuButton :list="bCList">业务合作</MenuButton>
     </div>
-    <div class="md:hidden block">
-      <button class="icon-button">
+    <div class="md:hidden block relative">
+      <button @click="toggleSidebarMenu" class="icon-button">
         <Icon icon="gg:menu" width="20" height="20" />
       </button>
+      <div
+        v-if="sidebarMenuVisible"
+        class="absolute right-0 w-[223px] mt-1 z-[16]"
+      >
+        <SidebarMenu type="top" />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import { Icon } from '@iconify/vue'
-import MenuButton from './MenuButton.vue';
+import { Icon } from "@iconify/vue"
+import { storeToRefs } from "pinia"
+import MenuButton from "./MenuButton.vue"
+import SidebarMenu from "../sidebar/SidebarMenu.vue"
+import { useModalToggleStore } from "@/stores/useModalToggleStore"
+import { cCList, bCList } from "@/utils/config"
+
 defineOptions({
-  name: 'Menu',
+  name: "Menu",
 })
 
-const cCList = ref([
-  {
-    href: '#',
-    name: '创作服务',
-  },
-  {
-    href: '#',
-    name: '直播管理',
-  },
-  {
-    href: '#',
-    name: '电脑直播助手',
-  }
-])
-
-const bCList = ref([
-{
-    href: '#',
-    name: '专业号',
-  },
-  {
-    href: '#',
-    name: '推广合作',
-  },
-  {
-    href: '#',
-    name: '蒲公英',
-  },
-  {
-    href: '#',
-    name: '商家入驻',
-  },
-  {
-    href: '#',
-    name: 'MCN入驻',
-  }
-])
+const store = useModalToggleStore()
+const { sidebarMenuVisible } = storeToRefs(store)
+const { toggleSidebarMenu } = store
 </script>

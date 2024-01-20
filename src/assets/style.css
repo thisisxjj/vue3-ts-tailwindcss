@@ -4,6 +4,9 @@
 
 :root {
   --header-height: 72px;
+  --interaction-width: 440px;
+
+  --color-red: #ff2442;
   --color-blue: #3d8af5;
   --color-border: rgba(0, 0, 0, 0.08);
   --color-background: #fff;
@@ -13,8 +16,12 @@
   --color-tertiary-label: rgba(51, 51, 51, 0.6);
   --color-quaternary-label: rgba(51, 51, 51, 0.3);
   --mask-paper: hsla(0, 0%, 100%, 0.98);
+  --mask-backdrop: rgba(0, 0, 0, 0.25);
+  --color-link: #13386c;
 
   /* dark */
+  --dark-color-link: #c7daef;
+  --dark-mask-backdrop: rgba(0, 0, 0, 0.5);
   --dark-color-background: #0a0a0a;
   --dark-elevation-high-background: #181818;
   --dark-elevation-low-background: #121212;
@@ -25,6 +32,7 @@
   --dark-color-tertiary-label: hsla(0, 0%, 100%, 0.6);
   --dark-color-quaternary-label: hsla(0, 0%, 100%, 0.3);
   --dark-color-border: hsla(0, 0%, 100%, 0.08);
+  --material-background: rgba(64, 64, 64, 0.25);
 }
 
 ::-webkit-scrollbar {
@@ -39,7 +47,7 @@ html {
     Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
     Noto Color Emoji, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC,
     PingFang TC, PingFang HK, Microsoft Yahei, Microsoft JhengHei;
-  @apply h-screen bg-white text-[var(--color-primary-label)] dark:text-[var(--dark-color-primary-label)] dark:bg-[var(--dark-color-background)];
+  @apply bg-white text-[var(--color-primary-label)] dark:text-[var(--dark-color-primary-label)] dark:bg-[var(--dark-color-background)];
 }
 
 .icon {
@@ -91,4 +99,32 @@ html {
   hover:rounded-full
   hover:text-[var(--color-primary-label)]
   dark:hover:text-white;
+}
+
+@media screen and (min-width: 1424px) {
+  :root {
+    --interaction-width: 440px;
+    --sliderWidth: 100%;
+  }
+}
+
+@media screen and (min-width: 1192px) and (max-width: 1423px) {
+  :root {
+    --interaction-width: 400px;
+    --sliderWidth: 100%;
+  }
+}
+
+@media screen and (min-width: 960px) and (max-width: 1191px) {
+  :root {
+    --interaction-width: 360px;
+    --sliderWidth: 100%;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  :root {
+    --interaction-width: 100vw;
+    --sliderWidth: 100vw;
+  }
 }

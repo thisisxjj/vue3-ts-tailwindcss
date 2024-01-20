@@ -1,0 +1,51 @@
+.reds-modal {
+  transition: opacity 0.2s, visibility 0.2s;
+  @apply flex
+    items-center
+    justify-center
+    fixed
+    top-0
+    left-0
+    w-full
+    h-full
+    z-[1000002]
+    box-border
+    invisible
+    opacity-0;
+}
+
+.reds-modal-open {
+  @apply visible
+    opacity-100;
+}
+
+.feedback-modal {
+  @apply z-[100008]
+    flex-col;
+}
+
+.reds-mask {
+  @apply absolute
+    top-0
+    left-0
+    w-full
+    h-full
+    bg-[var(--mask-backdrop)]
+    z-[-1];
+}
+
+.feedback-container {
+  @apply w-[440px]
+    bg-white
+    dark:bg-[var(--dark-elevation-high-background)]
+    shadow-menu-list
+    dark:shadow-dark-menu-list
+    rounded-2xl
+    flex
+    flex-col
+    items-center
+    relative
+    text-[16px]
+    font-normal
+    leading-[120%];
+}

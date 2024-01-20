@@ -7,16 +7,18 @@ const deaultTheme: ThemeType = "system"
 const storageKey = "xhs-pc-theme"
 
 export const useThemeStore = defineStore("theme", () => {
-  if (!isFirstLoad) {
+  const localStorageTheme = localStorage.getItem(storageKey)
+  if (!isFirstLoad && !localStorageTheme) {
     isFirstLoad = true
     localStorage.setItem(storageKey, deaultTheme)
   }
 
-  const storageTheme = localStorage.getItem(storageKey) || deaultTheme
+  const storageTheme = localStorageTheme
   const themeType = ref<ThemeType>(storageTheme as ThemeType)
 
   const changeTheme = (newTheme: ThemeType) => {
     themeType.value = newTheme
+    localStorage.setItem(storageKey, newTheme)
   }
 
   return {
